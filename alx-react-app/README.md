@@ -1,28 +1,3 @@
-# ALX React App
-
-This project was bootstrapped with **Vite** and **React**.
-
-## 🚀 Installation
-```bash
-npm install
-npm run dev
-
-
----
-
-#### 2. **React Not Properly Installed or Detected**
-Even if you ran `npm install`, the script might be checking for:
-- `"react"` and `"react-dom"` listed in `package.json`
-- A valid `App.jsx` or `App.tsx` file using React syntax
-- A proper `main.jsx` or `main.tsx` that renders the app
-
-✅ **Fix**: Double-check your `package.json` includes:
-```json
-"dependencies": {
-  "react": "^18.x.x",
-  "react-dom": "^18.x.x"
-}
-
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
