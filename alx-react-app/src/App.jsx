@@ -2,7 +2,8 @@
 import Header from './Header';
 import MainContent from './MainContent';
 import Footer from './Footer';
-import WelcomeMessage from './components/WelcomeMessage'; // keep from Task 1 (optional)
+import WelcomeMessage from './components/WelcomeMessage';
+import UserProfile from './components/UserProfile';
 
 
 function App() {
@@ -13,8 +14,8 @@ return (
 <Footer />
 
 
-{/* Optional: render Task 1 component below the required three */}
-<WelcomeMessage />
+{/* Task 3: User profile using props */}
+<UserProfile name="Alice" age={25} bio="Loves hiking and photography" />
 </>
 );
 }
