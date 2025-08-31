@@ -3,12 +3,9 @@ import WelcomeMessage from './components/WelcomeMessage';
 
 
 function App() {
-return (
-<>
-<WelcomeMessage />
-</>
-);
+  return (
+    <div>
+      <WelcomeMessage />
+    </div>
+  );
 }
-
-
-export default App;
