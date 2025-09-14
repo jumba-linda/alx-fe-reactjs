@@ -1,22 +1,23 @@
 import { useState } from 'react'
-import useRecipeStore from './recipeStore'
+import useRecipeStore from '../store/recipeStore'
 
 const AddRecipeForm = () => {
-  const addRecipe = useRecipeStore((state) => state.addRecipe)
+  const addRecipe = useRecipeStore(state => state.addRecipe)
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (!title.trim()) return
-    
-    addRecipe({ title, description })
-    setTitle('')
-    setDescription('')
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    if (title.trim() && description.trim()) {
+      addRecipe({ title, description })
+      setTitle('')
+      setDescription('')
+    }
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="recipe-form">
+      <h2>Add New Recipe</h2>
       <input
         type="text"
         value={title}
@@ -28,6 +29,7 @@ const AddRecipeForm = () => {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Recipe Description"
+        required
       />
       <button type="submit">Add Recipe</button>
     </form>
