@@ -6,10 +6,21 @@ const useRecipeStore = create((set) => ({
     { id: 2, title: 'Chicken Curry', description: 'Spicy chicken curry with aromatic spices' }
   ],
   
-  // Required actions
+  // Recipe actions
   addRecipe: (newRecipe) => set((state) => ({ 
     recipes: [...state.recipes, { id: Date.now(), ...newRecipe }] 
   })),
+  
+  updateRecipe: (id, updatedRecipe) => set((state) => ({
+    recipes: state.recipes.map(recipe => 
+      recipe.id === id ? { ...recipe, ...updatedRecipe } : recipe
+    )
+  })),
+  
+  deleteRecipe: (id) => set((state) => ({
+    recipes: state.recipes.filter(recipe => recipe.id !== id)
+  })),
+  
   setRecipes: (recipes) => set({ recipes })
 }))
 
