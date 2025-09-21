@@ -16,30 +16,38 @@ function Search() {
       setUser(data);
     } catch {
       setError(true);
+      setUser(null);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="p-4 max-w-md mx-auto">
+      <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
           placeholder="Enter GitHub username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          className="w-full p-2 border rounded"
         />
-        <button type="submit">Search</button>
+        <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded">
+          Search
+        </button>
       </form>
 
-      {loading && <p>Loading...</p>}
-      {error && <p>Looks like we can't find the user.</p>}
+      {loading && <p className="mt-4 text-gray-500">Loading...</p>}
+      {error && <p className="mt-4 text-red-500">Looks like we can't find the user.</p>}
       {user && (
-        <div>
-          <img src={user.avatar_url} alt="avatar" width="100" />
-          <h2>{user.name || user.login}</h2>
-          <a href={user.html_url} target="_blank">View Profile</a>
+        <div className="mt-4 border p-4 rounded shadow">
+          <img src={user.avatar_url} alt="avatar" className="w-24 h-24 rounded-full mx-auto" />
+          <h2 className="text-center mt-2 font-bold">{user.name || user.login}</h2>
+          <p className="text-center">
+            <a href={user.html_url} target="_blank" className="text-blue-500 underline">
+              View GitHub Profile
+            </a>
+          </p>
         </div>
       )}
     </div>
