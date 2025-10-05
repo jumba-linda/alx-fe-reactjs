@@ -3,7 +3,7 @@ import { useState } from 'react';
 function AddRecipeForm() {
   const [title, setTitle] = useState('');
   const [ingredients, setIngredients] = useState('');
-  const [instructions, setInstructions] = useState('');
+  const [steps, setSteps] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
@@ -12,7 +12,7 @@ function AddRecipeForm() {
     setError('');
     setSuccess('');
 
-    if (!title || !ingredients || !instructions) {
+    if (!title || !ingredients || !steps) {
       setError('All fields are required.');
       return;
     }
@@ -27,7 +27,7 @@ function AddRecipeForm() {
     setSuccess('Recipe submitted successfully!');
     setTitle('');
     setIngredients('');
-    setInstructions('');
+    setSteps('');
   };
 
   return (
@@ -51,8 +51,8 @@ function AddRecipeForm() {
         />
         <textarea
           placeholder="Preparation Steps"
-          value={instructions}
-          onChange={(e) => setInstructions(e.target.value)}
+          value={steps}
+          onChange={(e) => setSteps(e.target.value)}
           className="w-full p-2 border rounded h-32"
         />
         <button
