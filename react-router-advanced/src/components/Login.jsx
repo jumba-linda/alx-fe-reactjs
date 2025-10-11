@@ -1,6 +1,7 @@
-// src/components/Login.jsx
-function Login() {
-  return <h2>Please log in to continue</h2>;
+// src/components/Home.jsx
+function Home() {
+  return <h2>Home Page</h2>;
 }
 
-export default Login;
+export default Home;
+
