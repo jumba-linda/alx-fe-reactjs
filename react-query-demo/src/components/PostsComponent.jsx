@@ -1,3 +1,4 @@
+// src/components/PostsComponent.jsx
 import { useQuery } from 'react-query';
 
 const fetchPosts = async () => {
@@ -14,7 +15,6 @@ function PostsComponent() {
 
   return (
     <div>
-      <h2>Posts</h2>
       <button onClick={refetch}>Refetch Posts</button>
       <ul>
         {data.slice(0, 10).map(post => (
