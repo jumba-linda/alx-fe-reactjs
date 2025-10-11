@@ -1,4 +1,3 @@
-// src/App.jsx
 import PostsComponent from './components/PostsComponent';
 
 function App() {

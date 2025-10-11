@@ -1,4 +1,3 @@
-// src/components/PostsComponent.jsx
 import { useQuery } from 'react-query';
 
 const fetchPosts = async () => {
